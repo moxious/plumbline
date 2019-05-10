@@ -1,0 +1,26 @@
+{
+  "name": "plumbline",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel-node index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.5.0",
+    "bunyan": "^1.8.12",
+    "express": "^4.16.4",
+    "neo4j-driver": "^1.7.4",
+    "neo4j-graphql-js": "^2.6.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-async-generator-functions": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "sinon": "^7.3.2"
+  }
+}
