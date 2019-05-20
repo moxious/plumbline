@@ -1,6 +1,6 @@
 # Use the official Node.js 10 image.
 # https://hub.docker.com/_/node
-FROM node:10
+FROM node:12
 
 # Create and change to the app directory.
 WORKDIR /usr/src/app
@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 COPY package.json package*.json ./
 
 # Install production dependencies.
-RUN npm install --only=production
+RUN npm install
 
 # Copy local code to the container image.
 COPY . .
