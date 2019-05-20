@@ -1,7 +1,10 @@
 import { augmentTypeDefs, augmentSchema } from 'neo4j-graphql-js';
 import { ApolloServer, gql, makeExecutableSchema } from 'apollo-server';
 import { v1 as neo4j } from 'neo4j-driver';
-import { typeDefs, resolvers } from './schema';
+import { typeDefs as defaultTypedefs, resolvers as defaultResolvers } from './schema';
+
+const typeDefs = process.env.TYPEDEFS || defaultTypedefs;
+const resolvers = defaultResolvers;
 
 const schema = makeExecutableSchema({
   typeDefs: augmentTypeDefs(typeDefs),
@@ -35,7 +38,7 @@ const server = new ApolloServer({
 });
 
 server
-  .listen(process.env.GRAPHQL_LISTEN_PORT || 3000, '0.0.0.0')
+  .listen(process.env.PORT || process.env.GRAPHQL_LISTEN_PORT || 3000, '0.0.0.0')
   .then(({ url }) => {
     console.log(`GraphQL API ready at ${url}`);
   });
