@@ -2,7 +2,12 @@
   "name": "plumbline",
   "version": "0.0.1",
   "main": "index.js",
+  "description": "GraphQL container for Neo4j",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moxious/plumbline.git"
+  },  
   "scripts": {
     "start": "babel-node index.js"
   },
